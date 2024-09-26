@@ -50,6 +50,9 @@ orgs.newOrg('eclipse-equinox') {
         orgs.newRepoSecret('GIST_TOKEN') {
           value: "********",
         },
+        orgs.newRepoSecret('EQUINOX_BOT_PAT') {
+          value: "pass:bots/eclipse.equinox/github.com/token-hd5020",
+        },
       ],
     },
     orgs.newRepo('equinox-website') {
@@ -160,6 +163,11 @@ orgs.newOrg('eclipse-equinox') {
           required_approving_review_count: 0,
           requires_status_checks: false,
           requires_strict_status_checks: true,
+        },
+      ],
+      secrets: [
+        orgs.newRepoSecret('EQUINOX_BOT_PAT') {
+          value: "pass:bots/eclipse.equinox/github.com/token-hd5020",
         },
       ],
     },
