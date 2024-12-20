@@ -1,6 +1,6 @@
 local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
-orgs.newOrg('eclipse-equinox') {
+orgs.newOrg('eclipse.equinox', 'eclipse-equinox') {
   settings+: {
     description: "",
     name: "Eclipse Equinox",
