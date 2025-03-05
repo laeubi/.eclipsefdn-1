@@ -37,6 +37,9 @@ orgs.newOrg('eclipse.equinox', 'eclipse-equinox') {
     orgs.newRepo('equinox') {
       default_branch: "master",
       delete_branch_on_merge: false,
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "main",
+      gh_pages_source_path: "/docs",
       description: "equinox",
       has_discussions: true,
       web_commit_signoff_required: false,
