@@ -27,7 +27,7 @@ orgs.newOrg('eclipse.equinox', 'eclipse-equinox') {
   ],
   _repositories+:: [
     orgs.newRepo('.github') {
-      allow_merge_commit: true,
+      allow_squash_merge: false,
       delete_branch_on_merge: false,
       web_commit_signoff_required: false,
       workflows+: {
@@ -36,6 +36,7 @@ orgs.newOrg('eclipse.equinox', 'eclipse-equinox') {
     },
     orgs.newRepo('equinox') {
       default_branch: "master",
+      allow_squash_merge: false,
       delete_branch_on_merge: false,
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "master",
@@ -56,9 +57,9 @@ orgs.newOrg('eclipse.equinox', 'eclipse-equinox') {
       ],
     },
     orgs.newRepo('equinox-website') {
-      allow_merge_commit: true,
       allow_update_branch: false,
       default_branch: "master",
+      allow_squash_merge: false,
       delete_branch_on_merge: false,
       web_commit_signoff_required: false,
       workflows+: {
@@ -67,6 +68,7 @@ orgs.newOrg('eclipse.equinox', 'eclipse-equinox') {
     },
     orgs.newRepo('equinox.binaries') {
       default_branch: "master",
+      allow_squash_merge: false,
       delete_branch_on_merge: false,
       has_projects: false,
       has_wiki: false,
@@ -145,6 +147,7 @@ orgs.newOrg('eclipse.equinox', 'eclipse-equinox') {
     },
     orgs.newRepo('p2') {
       default_branch: "master",
+      allow_squash_merge: false,
       delete_branch_on_merge: false,
       has_discussions: true,
       has_projects: false,
