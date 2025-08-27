@@ -96,6 +96,7 @@ orgs.newOrg('eclipse.equinox', 'eclipse-equinox') {
       ],
     },
     orgs.newRepo('equinox.bundles') {
+      archived: true,
       default_branch: "master",
       delete_branch_on_merge: false,
       has_projects: false,
@@ -118,6 +119,7 @@ orgs.newOrg('eclipse.equinox', 'eclipse-equinox') {
       ],
     },
     orgs.newRepo('equinox.framework') {
+      archived: true,
       default_branch: "master",
       delete_branch_on_merge: false,
       has_projects: false,
