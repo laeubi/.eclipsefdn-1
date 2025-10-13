@@ -41,7 +41,8 @@ orgs.newOrg('eclipse.equinox', 'eclipse-equinox') {
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "master",
       gh_pages_source_path: "/docs",
-      description: "equinox",
+      description: "Eclipse Equinox",
+      homepage: "https://equinox.eclipseprojects.io",
       has_discussions: true,
       web_commit_signoff_required: false,
       workflows+: {
