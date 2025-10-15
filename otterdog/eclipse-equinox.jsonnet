@@ -59,21 +59,21 @@ orgs.newOrg('eclipse.equinox', 'eclipse-equinox') {
       ],
       rulesets: [
         orgs.newRepoRuleset('master') {
-          allows_updates: true,
           bypass_actors+: [
             "@eclipse-equinox/eclipseequinox-project-committers"
           ],
           include_refs+: [
             "refs/heads/master",
           ],
-          required_approving_review_count: 0,
-          required_status_checks+: [
-            "continuous-integration/jenkins/pr-head",
-            "call-license-check / check-licenses"
-          ],
-          requires_commit_signatures: false,
-          requires_last_push_approval: false,
-          requires_review_thread_resolution: false,
+          required_pull_request+: {
+            required_approving_review_count: 0,
+          },
+          required_status_checks+: {
+            status_checks+: [
+              "call-license-check / check-licenses",
+              "continuous-integration/jenkins/pr-head"
+            ],
+          },
         },
       ],
     },
