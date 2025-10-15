@@ -35,6 +35,7 @@ orgs.newOrg('eclipse.equinox', 'eclipse-equinox') {
       },
     },
     orgs.newRepo('equinox') {
+      allow_auto_merge: true,
       default_branch: "master",
       allow_squash_merge: false,
       delete_branch_on_merge: true,
@@ -54,6 +55,25 @@ orgs.newOrg('eclipse.equinox', 'eclipse-equinox') {
         },
         orgs.newRepoSecret('EQUINOX_BOT_PAT') {
           value: "pass:bots/eclipse.equinox/github.com/token-hd5020",
+        },
+      ],
+      rulesets: [
+        orgs.newRepoRuleset('master') {
+          bypass_actors+: [
+            "@eclipse-equinox/eclipseequinox-project-committers"
+          ],
+          include_refs+: [
+            "refs/heads/master",
+          ],
+          required_pull_request+: {
+            required_approving_review_count: 0,
+          },
+          required_status_checks+: {
+            status_checks+: [
+              "call-license-check / check-licenses",
+              "continuous-integration/jenkins/pr-head"
+            ],
+          },
         },
       ],
     },
