@@ -60,7 +60,7 @@ orgs.newOrg('eclipse.equinox', 'eclipse-equinox') {
       rulesets: [
         orgs.newRepoRuleset('master') {
           bypass_actors+: [
-            "@eclipse-equinox/eclipseequinox-project-committers"
+            "@eclipse-equinox/eclipse-equinox-committers"
           ],
           include_refs+: [
             "refs/heads/master",
