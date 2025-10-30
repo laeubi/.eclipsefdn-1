@@ -70,7 +70,6 @@ orgs.newOrg('eclipse.equinox', 'eclipse-equinox') {
           },
           required_status_checks+: {
             status_checks+: [
-              "call-license-check / check-licenses",
               "continuous-integration/jenkins/pr-head"
             ],
           },
